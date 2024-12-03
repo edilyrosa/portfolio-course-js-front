@@ -1,4 +1,4 @@
-//TODO: add a loader while wait for template.
+//TODO: pq no sirve en VERCEL? es probable deba hacer run build
 
 import { PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE } from './config.js';
 
