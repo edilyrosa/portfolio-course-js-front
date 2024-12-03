@@ -1,0 +1,42 @@
+#Variables de Entorno
+config.js
+
+# Node.js dependencies
+node_modules/
+
+# Build directories
+build/
+dist/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment variables
+.env
+
+# Compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Package files
+*.jar
+*.war
+*.zip
+
+# Miscellaneous
+*.tmp
+*.swp

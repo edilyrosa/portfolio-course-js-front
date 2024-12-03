@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-course-js-front",
+  "version": "1.0.0",
+  "description": "Un proyecto de Portafolio Profesional front-end con JS, HTML y CSS",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --entry-file=index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  
+  "keywords": ["portfolio", "proyecto", "servicios", "desarrollo web"],
+  "author": "Edily Mora",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
