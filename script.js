@@ -1,9 +1,9 @@
 //TODO: pq no sirve en VERCEL? es probable deba hacer run build
 
-import { PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE } from './config.js';
+//import { PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE } from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    emailjs.init(PUBLIC_KEY);
+    emailjs.init("4Y77DFjgko8rvBzwf");
     cargarProyectos();
     configurarFormulario();
     agregarValidacionTiempoReal();
@@ -154,7 +154,7 @@ async function enviarEmail() {
     };
 
     try {
-        const response = await emailjs.send(ID_SERVICE, ID_TEMPLATE, templateParams);
+        const response = await emailjs.send("service_iuya47f", "template_a4yygd8", templateParams);
         if (response.status === 200) {
             console.log('Email enviado con éxito:', response);
             return true;
