@@ -1,20 +1,32 @@
-import { PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE } from './config.js';
+let PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE;
 
-document.addEventListener('DOMContentLoaded', () => {
-    emailjs.init(PUBLIC_KEY);
-    cargarProyectos();
-    configurarFormulario();
-    agregarValidacionTiempoReal();
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        // Obtén las variables de entorno desde el endpoint de Vercel
+        const response = await fetch('/api/env');
+        const env = await response.json();
+        
+        PUBLIC_KEY = env.PUBLIC_KEY;
+        ID_TEMPLATE = env.ID_TEMPLATE;
+        ID_SERVICE = env.ID_SERVICE;
+        
+        // Inicializa emailjs con la clave pública y setea los templates y servicios
+        emailjs.init(PUBLIC_KEY);
+        cargarProyectos();
+        configurarFormulario();
+        agregarValidacionTiempoReal();
+    } catch (error) {
+        console.error('Error al cargar las variables de entorno:', error);
+        alert('Hubo un problema al cargar las configuraciones. Por favor, intenta más tarde.');
+    }
 });
 
 async function cargarProyectos() {
-    // Se esta muostrando el loader
     const container = document.getElementById('proyectos-container');
     const loader = document.getElementById("loader");
     try {
         const response = await fetch('./data.json');
         const data = await response.json();
-        // Remueve el loader
         loader.remove();
         data.proyectos.forEach(proyecto => {
             const card = crearProyectoCard(proyecto);
@@ -40,7 +52,6 @@ function crearProyectoCard(proyecto) {
 
     return card;
 }
-
 
 function agregarValidacionTiempoReal() {
     const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
@@ -143,6 +154,7 @@ function configurarFormulario() {
         }
     });
 }
+
 async function enviarEmail() {
     const templateParams = {
         from_name: document.getElementById('name').value,
@@ -163,4 +175,3 @@ async function enviarEmail() {
         throw error;
     }
 }
-

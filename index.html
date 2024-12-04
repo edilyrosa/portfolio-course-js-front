@@ -9,15 +9,16 @@
 </head>
 <body class="font-edily text-gray-800 bg-white">
 
-    <header class="bg-white shadow-md fixed w-full z-10">
+    <header class="bg-white shadow-md fixed w-full z-10 sm:text-sm md:text-lg lg:text-2xl">
         <nav class="flex justify-between items-center px-8 py-4">
-            <span class="text-2xl font-poppins font-bold italic text-blue-900 tracking-wider">
+            <span class="font-poppins font-bold italic text-blue-900 tracking-wider">
                 EDILY MORA - DESARROLLADORA WEB
             </span>
             <ul class="flex space-x-6 font-poppins font-bold text-xl">
                 <li><a href="#home" class="text-blue-900 font-semibold hover:underline">Inicio</a></li>
                 <li><a href="#mis-trabajos" class="text-blue-900 font-semibold hover:underline">Mis trabajos</a></li>
                 <li><a href="#contact" class="text-blue-900 font-semibold hover:underline">Contactame</a></li>
+            
             </ul>
         </nav>
     </header>
@@ -40,7 +41,7 @@
     <!-- Bienvenidos -->
     <section class="py-20 px-10 bg-gray-50" id="bienvenidos">
         <h2 class="text-2xl font-poppins font-bold text-blue-900 text-center">BIENVENIDO A MI PORTAFOLIO PROFESIONAL</h2>
-        <div class="flex flex-col lg:flex-row gap-6 mt-8 max-w-7xl mx-auto">
+        <div class="flex flex-col gap-6 mt-8 max-w-7xl mx-auto lg:flex-row">
             <div class="flex-1 text-justify text-xl space-y-4 font-lato">
                 <p>
                     Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
@@ -65,8 +66,14 @@
     <section class="py-20 px-10 bg-white min-h-screen" id="mis-trabajos">
         <h2 class="text-2xl font-poppins font-bold text-blue-900 text-center">MIS TRABAJOS</h2>
         <div class="max-w-5xl mx-auto text-justify mt-8 space-y-4 text-xl font-lato">
-            <p>Soy una software developer con experiencia en desarrollo web y diseño UI/UX...</p>
-            <div id="proyectos-container" class="flex gap-6 sm:flex-col lg:flex-row items-center px-4 lg:px-0">
+          
+            <p class="py-8">
+                Soy una software developer con experiencia en desarrollo web y diseño UI/UX...
+                Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
+                En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
+            </p>
+
+            <div id="proyectos-container" class="flex flex flex-col gap-6 items-center px-4 lg:px-0 lg:flex-row">
                 <!-- Loader por defecto -->
                 <div id="loader" class="flex flex-col gap-6 items-center justify-center mx-auto">
                     <p class="text-gray-700 font-medium">Cargando proyectos...</p>
@@ -104,7 +111,7 @@
         </form>
     </section>
 
-    <footer class="bg-gray-900 text-gray-200 py-8">
+    <footer class="bg-blue-900 text-gray-200 py-8">
         <div class="container mx-auto flex flex-col items-center space-y-6">
           <!-- Iconos de redes sociales -->
           <div class="flex space-x-6">
@@ -127,13 +134,14 @@
       
           <!-- Mención de copyright -->
           <p class="text-center text-sm text-gray-400">
-            &copy; 2024 TuCompañía. Todos los derechos reservados.
+            <span class="text-gray-400" aria-hidden="true">&copy;</span> 2024 Edily Mora Dev. Todos los derechos reservados.
           </p>
         </div>
       </footer>
       
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="module" src="./script.js?v=1.0"></script>
+    <!-- <script type="module" src="./script.js?v=1.0"></script> -->
+    <script type="module" src="./scriptVercel.js"></script>
 </body>
 </html>
