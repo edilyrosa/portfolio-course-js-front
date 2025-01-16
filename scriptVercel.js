@@ -28,7 +28,7 @@ async function cargarProyectos() {
         const response = await fetch('./data.json');
         const data = await response.json();
         loader.remove();
-        data.proyectos.forEach(proyecto => {
+        data.forEach(proyecto => {
             const card = crearProyectoCard(proyecto);
             container.appendChild(card);
         });
@@ -175,3 +175,67 @@ async function enviarEmail() {
         throw error;
     }
 }
+
+/* 
+EXPLICACION
+Aquí está el código completo de tu archivo script.js, modificado para manejar las variables de entorno usando una 
+función API en Vercel (/api/env.js) y JavaScript vanilla. Esto asegura que las claves se obtengan dinámicamente desde 
+el backend en tiempo de ejecución: 
+
+¿Es seguro este enfoque?
+Exposición limitada: Aunque las variables estarán accesibles en el cliente, el acceso está limitado al endpoint /api/env, y puedes controlar qué valores envías desde ahí.
+Recomendación: Para claves altamente sensibles, este método no es ideal, ya que cualquier dato enviado al cliente puede ser inspeccionado desde DevTools.
+Ventajas\//!https://portfolio-course-js-front.vercel.app/api/env 
+
+Sin librerías externas: Este enfoque funciona con JavaScript vanilla y no requiere herramientas adicionales.
+Compatibilidad con Vercel: Utiliza variables de entorno del servidor de manera directa.
+Conclusión
+Este método te permite usar las variables de entorno en un proyecto de JavaScript vanilla sin depender de librerías como dotenv ni de herramientas como Webpack. Sin embargo, siempre evalúa qué tan sensibles son las variables y considera mover cualquier lógica crítica al backend si es necesario.
+
+Usando el archivo api/env.js con JavaScript vanilla
+Supongamos que has configurado la función serverless api/env.js en Vercel. Puedes hacer una solicitud fetch desde tu código JavaScript vanilla para obtener las variables de entorno:
+
+1. Código del servidor (api/env.js):
+Este código ya lo tienes configurado:
+
+javascript
+Copy code
+export default function handler(req, res) {
+    res.status(200).json({
+        PUBLIC_KEY: process.env.PUBLIC_KEY,
+        ID_TEMPLATE: process.env.ID_TEMPLATE,
+        ID_SERVICE: process.env.ID_SERVICE
+    });
+}
+2. Código en tu frontend (script.js):
+Usa fetch para consumir la API y cargar las variables:
+
+javascript
+Copy code
+let PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('/api/env');
+        const env = await response.json();
+
+        // Asigna las variables obtenidas
+        PUBLIC_KEY = env.PUBLIC_KEY;
+        ID_TEMPLATE = env.ID_TEMPLATE;
+        ID_SERVICE = env.ID_SERVICE;
+
+        console.log('Variables de entorno cargadas:', PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE);
+
+        // Inicializa tus funciones aquí
+        emailjs.init(PUBLIC_KEY);
+        cargarProyectos();
+        configurarFormulario();
+        agregarValidacionTiempoReal();
+    } catch (error) {
+        console.error('Error al cargar las variables de entorno:', error);
+    }
+});
+
+
+*/
+

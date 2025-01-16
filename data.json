@@ -1,5 +1,5 @@
-{
-    "proyectos": [
+[
+    
       {
         "titulo": "Transacciones y Efectos Inmersivos",
         "descripcion": "Este es un proyecto de comercio electrónico desarrollado con React y Node.js.",
@@ -18,5 +18,5 @@
         "imagen": "./assets/pro3.jpg",
         "url": "https://www.ultimochisme.com/"
       }
-    ]
-  }
+    
+  ]

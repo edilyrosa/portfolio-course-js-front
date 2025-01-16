@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     agregarValidacionTiempoReal();
 });
 
-async function cargarProyectos() {
-    // Se esta muostrando el loader
+async function cargarProyectos() { //^Cargar asincronamente la data mostrada en div #proyectos-container
+    // el loader es un elemento que se esta mostrando de una.
     const container = document.getElementById('proyectos-container');
     const loader = document.getElementById("loader");
     try {
@@ -16,7 +16,7 @@ async function cargarProyectos() {
         const data = await response.json();
         // Remueve el loader
         loader.remove();
-        data.proyectos.forEach(proyecto => {
+        data.forEach(proyecto => {
             const card = crearProyectoCard(proyecto);
             container.appendChild(card);
         });
@@ -25,15 +25,15 @@ async function cargarProyectos() {
     }
 }
 
-function crearProyectoCard(proyecto) {
+function crearProyectoCard(proyecto) { //^Machote de la card con la informacion de un proyecto
     const card = document.createElement('div');
-    card.className = 'proyecto-card shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl w-full max-w-sm';
+    card.className = 'shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl w-full max-w-sm';
 
     card.innerHTML = `
-        <img src="${proyecto.imagen}" alt="${proyecto.titulo}" class="w-full h-48 object-cover">
-        <div class="proyecto-info p-4 bg-white">
+    <div class="proyecto-info p-4 bg-white w-full min-h-[45vh]">
+    <img src="${proyecto.imagen}" alt="${proyecto.titulo}" class="w-full object-fit">
             <h3 class="text-lg font-semibold mb-2">${proyecto.titulo}</h3>
-            <p class="text-sm text-gray-600">${proyecto.descripcion}</p>
+            <p class="text-sm text-gray-600 flex-grow">${proyecto.descripcion}</p>
             <a href="${proyecto.url}" target="_blank" class="text-blue-500 hover:underline mt-2 block"><i>${proyecto.url}</i></a>
         </div>
     `;
@@ -42,7 +42,7 @@ function crearProyectoCard(proyecto) {
 }
 
 
-function agregarValidacionTiempoReal() {
+function agregarValidacionTiempoReal() { //^validamos los input y textarea en tiempo real
     const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
 
     inputs.forEach(input => {
@@ -51,7 +51,7 @@ function agregarValidacionTiempoReal() {
     });
 }
 
-function validarCampo(input) {
+function validarCampo(input) {//^patrones de validaciones por entrada (que tenga blur o se le este typiando) y su mensajeria
     const nombreRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s-]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -60,10 +60,10 @@ function validarCampo(input) {
 
     if (input.id === 'name' && !nombreRegex.test(input.value)) {
         isValid = false;
-        mensaje = 'Nombre inválido';
+        mensaje = 'Estas escribiendo un Nombre inválido';
     } else if (input.id === 'email' && !emailRegex.test(input.value)) {
         isValid = false;
-        mensaje = 'Email inválido';
+        mensaje = 'Estas escribiendo un Email inválido';
     } else if (input.id === 'message' && input.value.length > 1000) {
         isValid = false;
         mensaje = 'El mensaje no debe exceder los 1000 caracteres.';
@@ -91,7 +91,7 @@ function ocultarError(campo) {
     errorSpan.style.display = 'none';
 }
 
-function validarFormulario() {
+function validarFormulario() {//^Booleano: Patrones, validamos y mensajeria de las entradas al evento "submit" NO realtime.
     const nombre = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const mensaje = document.getElementById('message').value;
@@ -103,6 +103,8 @@ function validarFormulario() {
 
     if (!nombreRegex.test(nombre)) {
         mostrarError('name', 'Nombre inválido');
+        console.log('Nombre inválido');
+        
         isValid = false;
     } else {
         ocultarError('name');
@@ -125,7 +127,7 @@ function validarFormulario() {
     return isValid;
 }
 
-function configurarFormulario() {
+function configurarFormulario() {//^submit del form mas validaciones del subtmit (no realtime)
     const form = document.getElementById('contact-form');
 
     form.addEventListener('submit', async (e) => {
