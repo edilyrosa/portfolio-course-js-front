@@ -185,8 +185,9 @@ el backend en tiempo de ejecución:
 ¿Es seguro este enfoque?
 Exposición limitada: Aunque las variables estarán accesibles en el cliente, el acceso está limitado al endpoint /api/env, y puedes controlar qué valores envías desde ahí.
 Recomendación: Para claves altamente sensibles, este método no es ideal, ya que cualquier dato enviado al cliente puede ser inspeccionado desde DevTools.
-Ventajas\//!https://portfolio-course-js-front.vercel.app/api/env 
+!     https://portfolio-course-js-front.vercel.app/api/env
 
+Ventajas\ 
 Sin librerías externas: Este enfoque funciona con JavaScript vanilla y no requiere herramientas adicionales.
 Compatibilidad con Vercel: Utiliza variables de entorno del servidor de manera directa.
 Conclusión

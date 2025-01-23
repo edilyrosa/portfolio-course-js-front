@@ -94,6 +94,7 @@
     <section class="py-20 px-10 bg-gray-50 min-h-screen" id="contact">
         <h2 class="text-2xl font-poppins font-bold text-blue-900 text-center">CONTACTAME!</h2>
         <form id="contact-form" class="max-w-md mx-auto mt-8 space-y-4">
+        
             <div>
                 <label for="name" class="block text-sm font-semibold py-2">Nombre:</label>
                 <input type="text" id="name" name="name" required 
@@ -151,7 +152,11 @@
       
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="module" src="./script.js"></script>  <!-- LA ULTIMA VER DE GIT, donde se ingnoran y protegen las var de entorno -->
-    <!-- <script type="module" src="./scriptVercel.js"></script> ESTA ES LA VERSION DEPLOY VERCEL, CON VAR DE ENTORNO EXPUESTAS, PERO NO ES LA ULTIMA VER DE GIT-->
+    <!-- LA ULTIMA VER DE GIT, donde se ingnoran y protegen las var de entorno 
+    <script type="module" src="./script.js"></script>  -->
+    
+    <script type="module" src="./scriptVercel.js"></script> 
+    <!-- 
+     ESTA ES LA VERSION DEPLOY VERCEL, CON VAR DE ENTORNO EXPUESTAS, PERO NO ES LA ULTIMA VER DE GIT-->
 </body>
 </html>
