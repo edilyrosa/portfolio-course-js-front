@@ -17,6 +17,24 @@
         "descripcion": "Un sitio web responsivo para un restaurante local utilizando HTML, CSS y JavaScript.",
         "imagen": "./assets/pro3.jpg",
         "url": "https://www.ultimochisme.com/"
+      },
+      {
+        "titulo": "Transacciones y Efectos Inmersivos",
+        "descripcion": "Este es un proyecto de comercio electrónico desarrollado con React y Node.js.",
+        "imagen": "./assets/pro1.jpg",
+        "url": "https://learning-js-ten.vercel.app/"
+      },
+      {
+        "titulo": "E-commerce",
+        "descripcion": "Una aplicación de gestión de tareas creada con Vue.js y Firebase.",
+        "imagen": "./assets/pro2.png",
+        "url": "https://learning-js-ten.vercel.app/"
+      },
+      {
+        "titulo": "Blog Informativo",
+        "descripcion": "Un sitio web responsivo para un restaurante local utilizando HTML, CSS y JavaScript.",
+        "imagen": "./assets/pro3.jpg",
+        "url": "https://www.ultimochisme.com/"
       }
     
   ]

@@ -27,15 +27,14 @@ async function cargarProyectos() { //^Cargar asincronamente la data mostrada en 
 
 function crearProyectoCard(proyecto) { //^Machote de la card con la informacion de un proyecto
     const card = document.createElement('div');
-    card.className = 'shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl w-full max-w-sm';
+    card.className = 'bg-white p-4 m-4 rounded-lg shadow-lg hover:shadow-xl w-full max-w-[350px] min-w-[25%] min-h-[45vh] transition duration-300 transform hover:-translate-y-2';
 
     card.innerHTML = `
-    <div class="proyecto-info p-4 bg-white w-full min-h-[45vh]">
+   
     <img src="${proyecto.imagen}" alt="${proyecto.titulo}" class="w-full object-fit">
-            <h3 class="text-lg font-semibold mb-2">${proyecto.titulo}</h3>
+            <h3 class='m-2 text-lg font-semibold'>${proyecto.titulo}</h3>
             <p class="text-sm text-gray-600 flex-grow">${proyecto.descripcion}</p>
             <a href="${proyecto.url}" target="_blank" class="text-blue-500 hover:underline mt-2 block"><i>${proyecto.url}</i></a>
-        </div>
     `;
 
     return card;

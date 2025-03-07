@@ -6,9 +6,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('/api/env');
         const env = await response.json();
         
-        PUBLIC_KEY = env.PUBLIC_KEY;
-        ID_TEMPLATE = env.ID_TEMPLATE;
-        ID_SERVICE = env.ID_SERVICE;
+        // PUBLIC_KEY = env.PUBLIC_KEY;
+        // ID_TEMPLATE = env.ID_TEMPLATE;
+        // ID_SERVICE = env.ID_SERVICE;
+
+        const PUBLIC_KEY = "4Y77DFjgko8rvBzwf";
+        const ID_TEMPLATE = "template_a4yygd8";
+       const ID_SERVICE = "service_iuya47f";
+       
         
         // Inicializa emailjs con la clave pública y setea los templates y servicios
         emailjs.init(PUBLIC_KEY);

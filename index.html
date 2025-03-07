@@ -12,18 +12,25 @@
     onload="document.getElementById('contact-button').style.display='block'"
     class="font-edily text-gray-800 bg-white">
 
-    <header class="bg-white shadow-md fixed w-full z-10 sm:text-sm md:text-lg lg:text-2xl">
-        <nav class="flex justify-between items-center px-8 py-4">
-            <span class="font-poppins font-bold italic text-blue-900 tracking-wider">
-                EDILY MORA - DESARROLLADORA WEB
-            </span>
-            <ul class="flex space-x-6 font-poppins font-bold text-xl">
-                <li><a href="#home" class="text-blue-900 font-semibold hover:underline">Inicio</a></li>
-                <li><a href="#mis-trabajos" class="text-blue-900 font-semibold hover:underline">Mis trabajos</a></li>
-                <li><a href="#contact" class="text-blue-900 font-semibold hover:underline">Contactame</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="bg-white shadow-lg text-blue-900 w-full fixed z-10">
+      
+        <div class="flex flex-row justify-between items-center">
+         
+          <span class="font-extrabold italic tracking-widest p-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+              EDILY MORA - DESARROLLADORA WEB
+          </span>
+          
+          <nav >
+            <ul class="flex flex-row gap-4 p-4 font-bold text-[8px] sm:text-xs md:text-sm lg:text-base">
+                  <li> <a href="#inicio" class="hover:underline"> Inicio </a> </li>
+                  <li> <a href="#mis-trabajos" class="hover:underline"> Mis trabajos </a> </li>
+                  <li> <a href="#contacto" class="hover:underline"> Contacto </a> </li>
+              </ul>
+          </nav>
+          
+        </div>
+  
+      </header>
 
     <!-- Video + inicio -->
     <!-- onloadstart="document.getElementById('contact-button').style.display='block'" ES EL onload de los videos-->
@@ -41,48 +48,57 @@
                 style="display:none;" 
                 onload="this.display=block" 
                 onclick="window.location.href='#contact'"
-                class="mt-6 bg-blue-900 text-white font-titulo tracking-wider py-2 px-6 rounded hover:bg-blue-700 transition">
+                class="mt-6 bg-blue-900 text-white font-titulo
+                 tracking-wider py-2 px-6 rounded
+                 hover:bg-blue-500 transition duration-[3000ms] ease-in-out
+                 ">
                 Contactame
             </button>
         </div>
     </section>
 
     <!-- Bienvenidos -->
-    <section class="py-20 px-10 bg-gray-50" id="bienvenidos">
-        <h2 class="text-2xl font-poppins font-bold text-blue-900 text-center">BIENVENIDO A MI PORTAFOLIO PROFESIONAL</h2>
-        <div class="flex flex-col gap-6 mt-8 max-w-7xl mx-auto lg:flex-row">
-            <div class="flex-1 text-justify text-xl space-y-4 font-lato">
-                <p>
-                    Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
-                    En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
-                </p>
-                <p>
-                    Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
-                    En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
-                </p>
-                <p>
-                    Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
-                    En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
-                </p>
+    <section id="quien-eres" class="bg-white min-h-screen py-20 px-10">
+      
+        <h2 class="text-blue-900 text-center text-2xl font-extrabold">BIENVENIDO A MI PORTAFOLIO PROFESIONAL</h2>
+        <!--! CONTENEDOR FLEX DE: parrafos + img -->
+        <div class="flex flex-col lg:flex-row gap-6 mt-8 max-w-[90%] mx-auto">
+          
+          <div class="flex-1 space-y-4 divide-y-4 text-justify text-base md:text-lg">
+            <p>
+                Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
+                En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
+            </p>
+            <p>
+                Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
+                En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
+            </p>
+            <p>
+                Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
+                En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
+            </p>
+          </div> 
+  
+            <div class="flex-1">
+              <img class="mx-auto h-[90%] max-w-[80%] md:max-w-[70%] rounded-lg shadow-md" src="../assets/girlProgramming.jpg">
             </div>
-            <div class="flex-1 flex justify-center">
-                <img src="./assets/girlProgramming.jpg" alt="Edily Mora trabajando en desarrollo de software" class="max-w-xs md:max-w-sm rounded-lg shadow-md h-[90%]">
-            </div>
-        </div>
-    </section>
+      
+      </div>
+  
+      </section>
 
     <!-- Mis Trabajos -->
-    <section class="py-20 px-10 bg-white min-h-screen" id="mis-trabajos">
+    <section class="bg-gray-100 min-h-screen py-20 px-10" id="mis-trabajos">
         <h2 class="text-2xl font-poppins font-bold text-blue-900 text-center">MIS TRABAJOS</h2>
-        <div class="max-w-5xl mx-auto text-justify mt-8 space-y-4 text-xl font-lato">
+        
           
-            <p class="py-8">
+            <p class="m-4 text-justify text-sm sm:text-base md:text-lg lg:text-xl">
                 Soy una software developer con experiencia en desarrollo web y diseño UI/UX...
                 Hola, soy Edily Mora, una desarrolladora de software apasionada por crear soluciones tecnológicas modernas, eficientes y adaptadas a las necesidades de cada cliente...
                 En este portafolio encontrarás una visión detallada de mi trayectoria profesional, una lista de los servicios que ofrezco y ejemplos de proyectos que he realizado...
             </p>
 
-            <div id="proyectos-container" class="flex flex flex-col gap-6 items-center px-4 lg:px-0 lg:flex-row">
+            <div id="proyectos-container" class='p-4 flex flex-col lg:flex-row gap-[2%] justify-center items-center flex-wrap'>
                 <!-- Loader -->
                 <div id="loader" class="flex flex-col gap-6 items-center justify-center mx-auto">
                     <p class="text-gray-700 font-medium">Cargando proyectos...</p>
@@ -90,7 +106,7 @@
                 </div>
                 <!-- Proyectos en carga -->
             </div>
-        </div>
+      
     </section>
 
     <!-- Contactame -->
@@ -155,11 +171,9 @@
       
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <!-- LA ULTIMA VER DE GIT, donde se ingnoran y protegen las var de entorno 
-    <script type="module" src="./script.js"></script>  -->
+    <script type="module" src="./script.js"></script>  
     
-    <script type="module" src="./scriptVercel.js"></script> 
-    <!-- 
-     ESTA ES LA VERSION DEPLOY VERCEL, CON VAR DE ENTORNO EXPUESTAS, PERO NO ES LA ULTIMA VER DE GIT-->
+    <!-- <script type="module" src="./scriptVercel.js"></script>  ESTA VRESION TIENE PROBLEMAS CON LAS VAR DE ENTORNO EN VERCEL-->
+    
 </body>
 </html>
