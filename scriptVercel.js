@@ -1,18 +1,22 @@
 let PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE;
 
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        // Obtén las variables de entorno desde el endpoint de Vercel
-        const response = await fetch('/api/env');
-        const env = await response.json();
+  
+    //try {
+        //Obtén las variables de entorno desde el endpoint de Vercel
+        //const response = await fetch('./api/env');
+        // if (!response.ok) {
+        //     throw new Error(`HTTP error! status: ${response.status}`);
+        // }
+        // const env = await response.json();
         
         // PUBLIC_KEY = env.PUBLIC_KEY;
         // ID_TEMPLATE = env.ID_TEMPLATE;
         // ID_SERVICE = env.ID_SERVICE;
 
-        const PUBLIC_KEY = "4Y77DFjgko8rvBzwf";
-        const ID_TEMPLATE = "template_a4yygd8";
-       const ID_SERVICE = "service_iuya47f";
+         PUBLIC_KEY = "4Y77DFjgko8rvBzwf";
+         ID_TEMPLATE = "template_a4yygd8";
+         ID_SERVICE = "service_iuya47f";
        
         
         // Inicializa emailjs con la clave pública y setea los templates y servicios
@@ -20,10 +24,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         cargarProyectos();
         configurarFormulario();
         agregarValidacionTiempoReal();
-    } catch (error) {
-        console.error('Error al cargar las variables de entorno:', error);
-        alert('Hubo un problema al cargar las configuraciones. Por favor, intenta más tarde.');
-    }
+        console.log('soy edi');
+        
+    // } catch (error) {
+    //     console.error('Error al cargar las variables de entorno:', error);
+    //     alert('Hubo un problema al cargar las configuraciones. Por favor, intenta más tarde.');
+    //}
 });
 
 async function cargarProyectos() {

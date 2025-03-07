@@ -1,6 +1,8 @@
 import { PUBLIC_KEY, ID_TEMPLATE, ID_SERVICE } from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('eddd');
+    
     emailjs.init(PUBLIC_KEY);
     cargarProyectos();
     configurarFormulario();
